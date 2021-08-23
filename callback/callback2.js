@@ -9,7 +9,6 @@ let doWork = function (job, timer, cb) {
     }, timer);
   };
   
-
   // 刷牙 -> 吃早餐 -> 寫功課 -> 看電視
   doWork("刷牙", 3000, function (err, data) {
     // 刷完牙後會被回呼的函式
