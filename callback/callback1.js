@@ -9,8 +9,7 @@ let doWork = function (job, timer, cb) {
   }, timer);
 };
 
-
-// 刷牙 -> 吃早餐 -> 寫功課
+// 刷牙
 doWork("刷牙", 3000, function (err, data) {
   // 刷完牙後會被回呼的函式
   // 會在這裡就是已經刷完牙了
