@@ -14,13 +14,13 @@ let today = moment().format("YYYYMMDD");
 //讀檔案(非同步)
 const fs = require("fs");
 
-fs.readFile("stock.txt", "utf8", (err, stockCode)=>{
+fs.readFile("stock.txt", "utf8", (err, stock)=>{
     axios
     .get("https://www.twse.com.tw/exchangeReport/STOCK_DAY", {
       params: {
         response: "json",
         date: today,
-        stockNo: stockCode,
+        stockNo: stock,
       },
     })
     .then((response) => {
