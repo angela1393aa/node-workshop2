@@ -6,6 +6,8 @@ let today = moment().format("YYYYMMDD");
 const fs = require("fs");
 //mysql讀資料庫
 const mysql = require("mysql");
+//引用dotenv
+require('dotenv').config();
 
 async function resultCode() {
 let stock = await new Promise((resolve, reject)=>{
@@ -23,11 +25,11 @@ let stock = await new Promise((resolve, reject)=>{
 
 //設定
 const connection = mysql.createConnection({
-    host: "localhost",
-    user: "tester",
-    port: 3306,
-    password: "tester",
-    database: "stock",
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
   });
 //連線
   connection.connect((err) => {
